@@ -18,6 +18,7 @@ Fortunately, I have found a solution to this problem (thanks Scott Hanselman) - 
 So you can just create a new boot configuration with Hyper-V disabled - and after that you can run any virtualization environments that you have :).
 
 Details (guid will be different):
+
 ```
 C:\>bcdedit /copy {current} /d "No Hyper-V"
 The entry was successfully copied to {ff-23-113-824e-5c5144ea}.
@@ -25,4 +26,5 @@ The entry was successfully copied to {ff-23-113-824e-5c5144ea}.
 C:\>bcdedit /set {ff-23-113-824e-5c5144ea} hypervisorlaunchtype off
 The operation completed successfully.
 ```
+
 Then you need to reboot holding down SHIFT on the keyboard.
