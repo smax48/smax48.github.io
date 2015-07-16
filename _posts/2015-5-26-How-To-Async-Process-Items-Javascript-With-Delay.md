@@ -10,7 +10,7 @@ You cannot just organise a for-loop and use setTimeout() directly, because in th
 
 However, if you use promises (or similar constructs) there is one very simple solution.
 
-```
+```javascript
 function processItemsWithDelay(items, process, context, delay) {
 	var seq = Promise.resolve();
 

@@ -17,7 +17,7 @@ The signing process can easily be automated inside a WiX project for VS (which i
 
 1. Define some required properties (understood by WiX build system):
 
-```
+```xml
 <PropertyGroup>
     <SignTarget>true</SignTarget>
     <SignTools>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin</SignTools>
@@ -29,7 +29,7 @@ The signing process can easily be automated inside a WiX project for VS (which i
 
 2. Now you can pre-process and sign your artifacts in the corresponding build targets (BeforeSigning, SignCabs, SignMsi etc), e.g.:
 
-```
+```xml
 <Target Name="SignMsi">
     <Exec Command="&quot;$(SignTools)\signtool&quot; sign /d Your_Description /s Certificate_Store_Name /n &quot;Your_Certificate_Subject_Name&quot; &quot;%(SignMsi.FullPath)&quot;" />
 </Target>

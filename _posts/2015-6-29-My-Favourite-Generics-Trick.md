@@ -12,7 +12,7 @@ Despite the fact that this is actually not the intended use of generics, it work
 All you need to do is to declare your base class in the following form
 (field "SomeIntProp" here is just an example, see its possible usage below):
 
-```
+```C#
 class MyBaseClass<T> where T : MyBaseClass<T> {
   static int SomeIntProp;
 ...
@@ -21,7 +21,7 @@ class MyBaseClass<T> where T : MyBaseClass<T> {
 
 And now the derived classes:
 
-```
+```C#
 class MyChildClassA : MyBaseClass<MyChildClassA> {
  public string StringProp1 {get; set; }
 ...
@@ -36,7 +36,7 @@ So basically you tell the compiler that your generic parameter is a class that m
 
 This approach gives you the possibility to query metadata about the derived class:
 
-```
+```C#
 typeof(T).GetProperties(); //will return {StringProp1} or {StringProp2} as a result depending on what type is <T>
 ```
 

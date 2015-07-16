@@ -39,7 +39,7 @@ The problem is that the default implementation ALWAYS returns a not-null object 
 
 Fortunately, we can easily fix this by adding one line to the ko.computed function that is created for view model binding (app.viewmodel.js, inside addViewModel):
 
-```
+```javascript
 //hack - begin
 if (self.view() !== viewItem) {
 	return null;
@@ -62,14 +62,14 @@ Nevertheless, we still have to modify the addViewModel function.
 First of all, a component must have a name :). I decided to inject a property that holds a viewModel name inside the view model object.
 The name can be anything, I add the 'View' postfix to options.name.
 
-```
+```javascript
 var componentName = options.name + 'View';
 viewItem['__name__'] = componentName;
 ```
 
 Of course, we need to add a property with the current view name to our AppViewModel:
 
-```
+```javascript
 self.currentViewName = ko.computed(function() {
     return self.view().__name__;
 });
@@ -77,7 +77,7 @@ self.currentViewName = ko.computed(function() {
 
 To facilitate the components registration process, I added another call to addViewModel:
 
-```
+```javascript
 ko.components.register(componentName, {
     viewModel: { instance: viewItem },
     template: { element: options.name + 'ViewTemplate' }
@@ -108,7 +108,7 @@ The Index.cshtml will have code like this:
 
 And yes, I forgot to mention that you also need to create the "isLoading" property for AppViewModel:
 
-```
+```javascript
 self.isLoading = ko.computed(function () {
     return self.view() === self.Views.Loading;
 });
