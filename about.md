@@ -5,8 +5,8 @@ permalink: /about/
 ---
 ![smax48]({{ site.baseurl }}/images/max_au_2009.jpg)
 
-My name is Maxim Chuvilyaev. I am a software developer and solution architect on the Microsoft.NET platform.
-Besides that, I've had a lot of experience with other technologies like Java, RDBMS, BI systems and more.
+Hi, my name is Maxim Chuvilyaev. I am a software developer and solution architect on the Microsoft.NET platform.
+I've also had a lot of experience with other technologies like Java, RDBMS, BI systems and more.
 
 Currently I live and work in Melbourne, Australia.
 
